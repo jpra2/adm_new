@@ -29,7 +29,6 @@ class RodarSimulacao:
             self.n += 1
 
     def initial_mesh(self):
-        import pdb; pdb.set_trace()
         print('\ngenerate initial mesh\n')
         from preprocess.generate_mesh0 import GenerateInitialMeshStructured3D
         mesh = GenerateInitialMeshStructured3D()

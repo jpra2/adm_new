@@ -24,6 +24,9 @@ class LoadMesh:
         self.datas = dict()
         self.excluir = []
         self.n_levels = 2
+        with open("inputs.yaml", 'r') as stream:
+            data_loaded = yaml.load(stream)
+        self.data_loaded = data_loaded
 
     def load_entities_0(self):
 
@@ -61,7 +64,7 @@ class LoadMesh:
             face_boundary_name = 'faces_boundary_meshsets_level_'+str(i+1)
             excluir_nomes.append(names_tags[0]+str(i+1))
             excluir_nomes.append(names_tags[1]+str(i+1))
-            coarse_volumes = self.mb.tag_get_data(self.tags[names_tags[0]+str(i+1)], 0)
+            coarse_volumes = self.mb.tag_get_data(self.tags[names_tags[0]+str(i+1)], 0, flat=True)
             self.entities[coarse_volume_name] = coarse_volumes
             self.datas[names_tags[0]+str(i+1)] = coarse_volumes
             faces_boundary = self.mb.tag_get_data(self.tags[names_tags[1]+str(i+1)], 0, flat=True)[0]

@@ -1,5 +1,11 @@
-from  rodar_simulacao import RodarSimulacao
+import os
 
-RodarSimulacao(3)
+path_ant = os.getcwd()
+parent_dir = os.path.dirname(os.path.abspath(__file__))
+os.chdir(parent_dir)
 
-import pdb; pdb.set_trace()
+from rodar_simulacao import RodarSimulacao
+
+RodarSimulacao(0)
+
+os.chdir(path_ant)

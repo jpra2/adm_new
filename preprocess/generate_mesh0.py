@@ -278,8 +278,6 @@ class GenerateInitialMeshStructured3D:
     def save_initial_mesh(self):
         global flying_dir
 
-        import pdb; pdb.set_trace()
-
         names_tags = list(self.tags.keys())
         file_names_tags = os.path.join(flying_dir, 'names_tags_out_initial_mesh.txt')
 
@@ -290,7 +288,6 @@ class GenerateInitialMeshStructured3D:
 
         with open(file_name_initial_mesh, 'wb') as handle:
             pickle.dump(self.ext_out_h5m, handle)
-
 
         file_name_tags_to_infos = os.path.join(flying_dir, 'tags_to_infos_initial_mesh.txt')
         with open(file_name_tags_to_infos, 'wb') as handle:
