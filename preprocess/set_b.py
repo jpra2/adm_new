@@ -1,6 +1,7 @@
 from .generate_dual_mesh import get_box
 from .generate_mesh0 import getting_tag
 import numpy as np
+from pymoab import types
 
 class SetB:
 
@@ -19,7 +20,7 @@ class SetB:
             entitie = 'volumes'
             t1 = types.MB_TYPE_DOUBLE
             t2 = types.MB_TAG_SPARSE
-            self.getting_tag(self.mesh.mb, name, n, t1, t2, True, entitie, tipo, self.mesh.tags, self.mesh.tags_to_infos, self.mesh.entities_to_tags)
+            getting_tag(self.mesh.mb, name, n, t1, t2, True, entitie, tipo, self.mesh.tags, self.mesh.tags_to_infos, self.mesh.entities_to_tags)
 
     def set_wells(self):
 
