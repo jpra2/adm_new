@@ -1,0 +1,15 @@
+*__pycache__
+*.npy
+*.npz
+*.dat
+*.h5m
+*.vtk
+*.msh
+!27x27x27.msh
+*.txt
+*.csv
+*.png
+*_tt.py
+
+
+*gmsh

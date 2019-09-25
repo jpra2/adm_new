@@ -1,0 +1,43 @@
+input_name: '27x27x27'
+
+nx: 27
+ny: 27
+nz: 27
+
+lx: 20
+ly: 10
+lz: 2
+
+Crs:
+  Cr1: [3,3,3]
+  Cr2: [9,9,9]
+
+rodar_monofasico: True
+set_homog: True
+
+tol: 0.0
+tol_n2: 0.0
+refins: 0.05
+
+# type: injector or producer
+# presc: tipo de prescrição: neumann or dirichlet
+# val: valor
+# region; type: 'box'
+# region; lim: limites da regiao
+wells:
+
+  p1:
+    type: 'injector'
+    presc: 'neumann'
+    val: 20
+    region:
+      type: 'box'
+      lim: [[0.0, 0.0, 0.0],[20.0, 300.0, 90.0]]
+
+  p2:
+    type: 'producer'
+    presc: 'dirichlet'
+    val: 100
+    region:
+      type: 'box'
+      lim: [[580.0, 0.0, 0.0],[600.0, 300.0, 90.0]]
