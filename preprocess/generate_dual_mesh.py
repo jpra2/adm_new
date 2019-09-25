@@ -1,5 +1,5 @@
-from .generate_mesh0 import GenerateInitialMeshStructured3D
-getting_tag = GenerateInitialMeshStructured3D.getting_tag
+from .generate_mesh0 import getting_tag
+# getting_tag = GenerateInitialMeshStructured3D.getting_tag
 import time
 from pymoab import core, types, rng, topo_util
 import yaml

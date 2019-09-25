@@ -11,7 +11,7 @@ parent_parent_dir = os.path.dirname(parent_dir)
 class RodarSimulacao:
     passou1 = False
 
-    def __init__(self, n, rodar_ate_n2=3):
+    def __init__(self, n, rodar_ate_n2=4):
 
         """
         numbers:
@@ -19,12 +19,13 @@ class RodarSimulacao:
             1: carregar malha inicial
         """
 
-        ns = [0, 1, 2, 3]
+        ns = [0, 1, 2, 3, 4]
         self.n = n
         self.n2 = rodar_ate_n2
         assert self.n2 >= n, 'n2 deve ser maior que n1'
 
         while(self.n <= rodar_ate_n2):
+            print(f'\nEstado {self.n}\n')
             ok = self.run()
             self.n += 1
 
@@ -53,6 +54,15 @@ class RodarSimulacao:
         self.mesh = LoadMesh()
         self.mesh.run(self.n)
 
+    def set_cont(self):
+        '''
+        setar contornos
+        '''
+
+        from preprocess.set_b import SetB
+        set_cont = SetB(self.mesh)
+        set_cont.run()
+
     def run(self):
 
         if self.n == 0:
@@ -65,7 +75,7 @@ class RodarSimulacao:
         if self.n == 3:
             self.load_dual_mesh()
         if self.n == 4:
-            # TODO: setar condicoes de contorno
-            pass
+            self.set_cont()
+            import pdb; pdb.set_trace()
 
         return 0

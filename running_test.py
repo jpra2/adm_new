@@ -6,6 +6,6 @@ os.chdir(parent_dir)
 
 from rodar_simulacao import RodarSimulacao
 
-RodarSimulacao(0)
+RodarSimulacao(3)
 
 os.chdir(path_ant)
